@@ -34,13 +34,19 @@ btn.addEventListener("click",() => {
 
 });
 
+function randomNumber() {
+    const max = 255;
+    const min = 0;
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 
 function hoverEvent() {
     const hoverEffects = document.querySelectorAll(".hover-effect");
 
 hoverEffects.forEach((effect) => {
     effect.addEventListener("mouseenter", (event) => {
-        event.target.style.backgroundColor = "blue";
+        event.target.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`;
     });
 
     effect.addEventListener("mouseleave", (event) => {
